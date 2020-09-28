@@ -2,7 +2,7 @@ import React from 'react';
  
 const SessionFirebase = () => (
   <div>
-    <h1>App</h1>
+    <h1>Session</h1>
   </div>
 );
  
