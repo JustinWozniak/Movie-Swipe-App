@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { withFirebase } from '../../firebase';
+import { withFirebase } from '..';
 
 import Navigation from '../Navigation';
 import LandingPage from '../Landing';
@@ -13,8 +13,8 @@ import AdminPage from '../Admin';
 
 import * as ROUTES from '../../../constants/routes';
 
-import { AuthUserContext } from '../../session';
-import { withAuthentication } from '../../session';
+import { AuthUserContext } from '../../Session';
+import { withAuthentication } from '../../Session';
 
 const App = () => (
   <Router>

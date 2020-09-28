@@ -11,7 +11,7 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 
 import * as ROUTES from '../../constants/routes';
-import { withAuthentication } from '../session';
+import { withAuthentication } from '../Session';
 
 const App = () => (
   <Router>

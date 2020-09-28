@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
 
-import { AuthUserContext } from '../session';
+import { AuthUserContext } from '../Session';
 
 const Navigation = () => (
-  <div>
+  <div className='site-header'>
+  <img src="/images/MovieSwipe.png" alt='main logo' className="navLogo" />
     <AuthUserContext.Consumer>
       {authUser =>
         authUser ? <NavigationAuth /> : <NavigationNonAuth />
@@ -15,8 +16,9 @@ const Navigation = () => (
     </AuthUserContext.Consumer>
   </div>
 );
+
 const NavigationAuth = () => (
-  <ul>
+  <ul className='noBullets'>
     <li>
       <Link to={ROUTES.LANDING}>Landing</Link>
     </li>
@@ -26,16 +28,17 @@ const NavigationAuth = () => (
     <li>
       <Link to={ROUTES.ACCOUNT}>Account</Link>
     </li>
-    <li>
+    {/* <li>
       <Link to={ROUTES.ADMIN}>Admin</Link>
-    </li>
+    </li> */}
     <li>
       <SignOutButton />
     </li>
   </ul>
 );
+
 const NavigationNonAuth = () => (
-  <ul>
+  <ul className='noBullets'>
     <li>
       <Link to={ROUTES.LANDING}>Landing</Link>
     </li>

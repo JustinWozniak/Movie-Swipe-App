@@ -1485,11 +1485,17 @@ textarea.form-input {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+.noBullets {
+  list-style-type: none;
+  margin-top: -11%; }
+
 .site-header {
   position: absolute !important;
   top: 0;
   width: 100%;
-  z-index: 10 !important; }
+  z-index: 10 !important;
+  background-color: black;
+  margin-bottom: 10%; }
   .site-header + .site-content .section:first-of-type {
     padding-top: 80px; }
   .site-header .brand {
@@ -1514,8 +1520,6 @@ textarea.form-input {
     margin-bottom: 0; }
     .header-nav ul:first-of-type {
       flex-wrap: wrap; }
-  .header-nav li + .header-button {
-    margin-left: 32px; }
   .header-nav a:not(.button) {
     display: block;
     color: #9CA9B3;
@@ -2944,3 +2948,6 @@ img.has-shadow {
     width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
   .row .col-3-of-4 {
     width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+
+.navLogo {
+  width: 20%; }

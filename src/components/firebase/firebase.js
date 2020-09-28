@@ -13,9 +13,11 @@ const config = {
 	appId: process.env.REACT_APP_APPID,
 	measurementId: process.env.REACT_APP_MEASUREMENTID
 };
+
 class Firebase {
   constructor() {
     app.initializeApp(config);
+
     this.auth = app.auth();
     this.db = app.database();
   }
@@ -35,11 +37,10 @@ class Firebase {
   doPasswordUpdate = password =>
     this.auth.currentUser.updatePassword(password);
 
+  // *** User API ***
 
-      // *** User API ***
- 
   user = uid => this.db.ref(`users/${uid}`);
- 
+
   users = () => this.db.ref('users');
 }
 
