@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-import { FirebaseContext } from '../../firebase';
 import * as ROUTES from '../../../constants/routes';
-import { withFirebase } from '../../firebase';
+import { withFirebase } from '../../firebase/index';
 const SignUpPage = () => (
 	<div>
 		<h1>SignUp</h1>
@@ -71,7 +70,7 @@ class SignUpFormBase extends Component {
 					Sign Up
 				</button>
 
-				{error && <p>{error.message}</p>}
+				{error && <p>{console.log(error.message)}</p>}
 			</form>
 		);
 	}
