@@ -1911,6 +1911,44 @@ h3, h4, h5, h6,
 /*--------------------------------------------------------------
 # Buttons
 --------------------------------------------------------------*/
+.newMoviesGlowButton {
+  position: relative;
+  margin: auto;
+  padding-right: 0.5rem;
+  padding-left: 1.5rem;
+  font-size: 2rem;
+  line-height: 10rem;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(160deg, #5e10ef, #37c8c1);
+  border-radius: 30px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 0 0 0 #ec008c, 0.5rem 0.5rem 30px #085878;
+  transition: box-shadow 0.6s; }
+  .newMoviesGlowButton:hover {
+    box-shadow: 0 0 60px 2px #ec008c, 0.5rem 0.5rem 30px #13092d; }
+  .newMoviesGlowButton:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    border-radius: 30px;
+    background-image: linear-gradient(170deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    pointer-events: none; }
+  @media only screen and (max-width: 56.25em) {
+    .newMoviesGlowButton {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+      font-size: 1rem;
+      line-height: 5rem; } }
+
 .landingGlowButton {
   position: relative;
   margin: auto;
@@ -1963,7 +2001,8 @@ h3, h4, h5, h6,
     .landingGlowButton {
       padding-right: 0.5rem;
       padding-left: 0.5rem;
-      font-size: 1rem; } }
+      font-size: 1rem;
+      line-height: 5rem; } }
 
 .signInGlowButton {
   position: relative;
@@ -2018,7 +2057,8 @@ h3, h4, h5, h6,
     .signInGlowButton {
       padding-right: 0.5rem;
       padding-left: 0.5rem;
-      font-size: 1rem; } }
+      font-size: 1rem;
+      line-height: 5rem; } }
 
 /*--------------------------------------------------------------
 # Forms
@@ -3079,3 +3119,17 @@ img.has-shadow {
   @media only screen and (max-width: 37.5em) {
     .navLogo {
       margin-top: 35%; } }
+
+.movieCovers {
+  float: left;
+  width: 15%;
+  margin-left: 4%;
+  margin-bottom: 5%; }
+  @media only screen and (max-width: 37.5em) {
+    .movieCovers {
+      width: 90%;
+      margin: 5%; } }
+  @media only screen and (max-width: 56.25em) {
+    .movieCovers {
+      width: 39%;
+      margin: 5%; } }

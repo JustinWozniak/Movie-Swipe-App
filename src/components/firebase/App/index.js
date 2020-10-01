@@ -14,7 +14,6 @@ import AdminPage from '../Admin';
 
 import * as ROUTES from '../../../constants/routes';
 
-import { AuthUserContext } from '../../Session';
 import { withAuthentication } from '../../Session';
 
 const App = () => (

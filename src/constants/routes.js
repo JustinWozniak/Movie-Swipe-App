@@ -5,4 +5,4 @@ export const HOME = '/home';
 export const ACCOUNT = '/account';
 export const ADMIN = '/admin';
 export const PASSWORD_FORGET = '/pw-forget';
-export const FOOTER = '/footer';
+export const NEW_MOVIES = '/new_movies';

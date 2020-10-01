@@ -1,3 +1,52 @@
+.newMoviesGlowButton {
+    position: relative;
+    margin: auto;
+    padding-right: 0.5rem;
+    padding-left: 1.5rem;
+    font-size: 2rem;
+    line-height: 10rem;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(160deg, $spotSeven, $spotEight);
+    border-radius: 30px;
+    cursor: pointer;
+    user-select: none;
+    box-shadow:
+        0 0 0 0 $spotTwo,
+        0.5rem 0.5rem 30px mix(black, $spotNine, 50%);
+    transition: box-shadow 0.6s;
+
+    &:hover {
+        box-shadow:
+            0 0 60px 2px $spotTwo,
+            0.5rem 0.5rem 30px mix(black, $spotOne, 50%);
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        bottom: 2px;
+        left: 2px;
+        border-radius: 30px;
+        background-image: linear-gradient(170deg, rgba(white, 0.3), rgba(white, 0));
+        pointer-events: none;
+    }
+    @include respond(tab-port) {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        font-size: 1rem;
+        line-height: 5rem;
+    }
+
+}
+
+
 .landingGlowButton {
     position: relative;
     margin: auto;
@@ -61,6 +110,7 @@
         padding-right: 0.5rem;
         padding-left: 0.5rem;
         font-size: 1rem;
+        line-height: 5rem;
     }
 }
 
@@ -128,5 +178,6 @@
         padding-right: 0.5rem;
         padding-left: 0.5rem;
         font-size: 1rem;
+        line-height: 5rem;
     }
 }

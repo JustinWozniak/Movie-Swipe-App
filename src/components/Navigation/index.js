@@ -26,6 +26,9 @@ const NavigationAuth = () => (
 		<li>
 			<Link to={ROUTES.ACCOUNT}>Account</Link>
 		</li>
+		<li>
+			<Link to={ROUTES.NEW_MOVIES}  className="newMoviesGlowButton">New Movies</Link>
+		</li>
 		{/* <li>
       <Link to={ROUTES.ADMIN}>Admin</Link>
     </li> */}
@@ -42,6 +45,9 @@ const NavigationNonAuth = () => (
 		</li>
 		<li>
 			<Link to={ROUTES.SIGN_IN} className='signInGlowButton'>Sign In</Link>
+		</li>
+		<li>
+			<Link to={ROUTES.NEW_MOVIES}  className="newMoviesGlowButton">New Movies</Link>
 		</li>
 	</ul>
 );
