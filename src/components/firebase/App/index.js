@@ -11,6 +11,7 @@ import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
 
+
 import * as ROUTES from '../../../constants/routes';
 
 import { AuthUserContext } from '../../Session';
@@ -33,6 +34,7 @@ const App = () => (
       <Route path={ROUTES.HOME} component={HomePage} />
       <Route path={ROUTES.ACCOUNT} component={AccountPage} />
       <Route path={ROUTES.ADMIN} component={AdminPage} />
+  
     </div>
   </Router>
 );
