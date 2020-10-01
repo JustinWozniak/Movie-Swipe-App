@@ -74,8 +74,9 @@ class SignUpFormBase extends Component {
       username === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
+      <form className='form' onSubmit={this.onSubmit} >
+        <input 
+        className="input"
           name="username"
           value={username}
           onChange={this.onChange}

@@ -1,3 +1,11 @@
-.navLogo{
-    width: 20%;
+.navLogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    @include respond(phone) {
+        margin-top: 35%;
+    }
+
 }

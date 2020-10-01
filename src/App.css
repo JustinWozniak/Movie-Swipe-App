@@ -350,7 +350,7 @@ html {
   text-align: center; }
 
 body {
-  background: #151719;
+  background: #000000;
   /* Fallback for when there is no custom background color defined. */
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
@@ -600,7 +600,7 @@ pre .h6 {
   font-family: "Courier 10 Pitch", Courier, monospace; }
 
 pre, code, kbd, tt, var {
-  background: #0e0f11; }
+  background: black; }
 
 pre {
   font-size: 16px;
@@ -642,11 +642,11 @@ strong {
     color: #6163FF; }
   .invert-color h1, .invert-color h2, .invert-color h3, .invert-color h4, .invert-color h5, .invert-color h6,
   .invert-color .h1, .invert-color .h2, .invert-color .h3, .invert-color .h4, .invert-color .h5, .invert-color .h6 {
-    color: #151719; }
+    color: #000000; }
   .invert-color address {
     border-color: #ECEDED; }
   .invert-color pre, .invert-color code, .invert-color kbd, .invert-color tt, .invert-color var {
-    background: #0e0f11; }
+    background: black; }
 
 @media (max-width: 640px) {
   .h1-mobile {
@@ -870,7 +870,7 @@ fieldset {
   background-color: #ECEDED;
   border-width: 1px;
   border-style: solid;
-  border-color: #151719; }
+  border-color: #000000; }
   .form-input:hover,
   .form-select:hover,
   .form-checkbox input:hover,
@@ -917,7 +917,7 @@ fieldset {
   padding: 11px 15px;
   height: 48px;
   border-radius: 0;
-  color: #151719;
+  color: #000000;
   box-shadow: none;
   max-width: 100%;
   width: 100%; }
@@ -1284,7 +1284,7 @@ textarea.form-input {
   .modal::before {
     content: '';
     position: absolute;
-    background-color: rgba(21, 23, 25, 0.88); }
+    background-color: rgba(0, 0, 0, 0.88); }
   .modal.is-active {
     display: flex; }
     .modal.is-active::before,
@@ -1487,15 +1487,25 @@ textarea.form-input {
 --------------------------------------------------------------*/
 .noBullets {
   list-style-type: none;
-  margin-top: -11%; }
+  margin-top: 0%; }
+  @media only screen and (max-width: 37.5em) {
+    .noBullets {
+      float: Left;
+      padding: 0;
+      margin: 0; }
+      .noBullets li {
+        display: inline-block;
+        padding: 10px 30px; } }
 
 .site-header {
-  position: absolute !important;
+  position: absolute;
   top: 0;
-  width: 100%;
   z-index: 10 !important;
   background-color: black;
   margin-bottom: 10%; }
+  @media only screen and (max-width: 37.5em) {
+    .site-header {
+      position: relative; } }
   .site-header + .site-content .section:first-of-type {
     padding-top: 80px; }
   .site-header .brand {
@@ -1556,7 +1566,7 @@ textarea.form-input {
       right: 0;
       top: 100%;
       z-index: 9999;
-      background: #0e0f11;
+      background: black;
       max-height: 0;
       opacity: 0;
       overflow: hidden;
@@ -1583,11 +1593,11 @@ textarea.form-input {
 # Site content
 --------------------------------------------------------------*/
 .is-boxed {
-  background: #1a1c1f; }
+  background: #050505; }
   .is-boxed .body-wrap {
     max-width: 1440px;
     margin: 0 auto;
-    box-shadow: 0 20px 48px rgba(21, 23, 25, 0.8); }
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.8); }
     .is-boxed .body-wrap::before {
       content: '';
       position: absolute;
@@ -1595,7 +1605,7 @@ textarea.form-input {
       left: 0;
       width: 100%;
       height: 100%;
-      background: #151719;
+      background: #000000;
       z-index: -10; }
 
 .body-wrap {
@@ -1620,7 +1630,7 @@ textarea.form-input {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #151719;
+    background: #000000;
     z-index: -3; }
 
 .site-footer-inner {
@@ -1665,7 +1675,7 @@ textarea.form-input {
   text-transform: uppercase;
   margin-bottom: 8px; }
   .invert-color .footer-block-title {
-    color: #151719; }
+    color: #000000; }
 
 .footer-social a,
 .footer-nav a {
@@ -1901,9 +1911,120 @@ h3, h4, h5, h6,
 /*--------------------------------------------------------------
 # Buttons
 --------------------------------------------------------------*/
+.landingGlowButton {
+  position: relative;
+  margin: auto;
+  padding-right: 3.5rem;
+  padding-left: 3.5rem;
+  font-size: 2rem;
+  line-height: 10rem;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(160deg, #ff0000, #ec008c);
+  border-radius: 30px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 0 0 0 #ec008c, 0.5rem 0.5rem 30px #13092d;
+  transition: box-shadow 0.6s; }
+  .landingGlowButton:hover {
+    box-shadow: 0 0 60px 2px #ec008c, 0.5rem 0.5rem 30px #13092d; }
+  .landingGlowButton:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    border-radius: 30px;
+    background-image: linear-gradient(170deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    pointer-events: none; }
+  @media only screen and (max-width: 37.5em) {
+    .landingGlowButton {
+      position: relative;
+      margin: auto;
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+      font-size: 1rem;
+      line-height: 0rem;
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-image: linear-gradient(160deg, #ff0000, #ec008c);
+      border-radius: 30px;
+      cursor: pointer; } }
+  @media only screen and (max-width: 56.25em) {
+    .landingGlowButton {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+      font-size: 1rem; } }
+
+.signInGlowButton {
+  position: relative;
+  margin: auto;
+  padding-right: 3.5rem;
+  padding-left: 3.5rem;
+  font-size: 2rem;
+  line-height: 10rem;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(160deg, #115a15, #d4ec00);
+  border-radius: 30px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 0 0 0 #ec008c, 0.5rem 0.5rem 30px #180080;
+  transition: box-shadow 0.6s; }
+  .signInGlowButton:hover {
+    box-shadow: 0 0 60px 2px #ec008c, 0.5rem 0.5rem 30px #180080; }
+  .signInGlowButton:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    border-radius: 30px;
+    background-image: linear-gradient(170deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    pointer-events: none; }
+  @media only screen and (max-width: 37.5em) {
+    .signInGlowButton {
+      position: relative;
+      margin: auto;
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+      font-size: 1rem;
+      line-height: 0rem;
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-image: linear-gradient(160deg, #115a15, #d4ec00);
+      border-radius: 30px;
+      cursor: pointer; } }
+  @media only screen and (max-width: 56.25em) {
+    .signInGlowButton {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+      font-size: 1rem; } }
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
+.form {
+  margin-bottom: 20%; }
+
 /*--------------------------------------------------------------
 # Hamburger
 --------------------------------------------------------------*/
@@ -2074,7 +2195,7 @@ h3, h4, h5, h6,
   color: #24E5AF; }
 
 .invert-color .text-color-high {
-  color: #151719; }
+  color: #000000; }
 
 .invert-color .text-color-mid {
   color: #25282C; }
@@ -2101,7 +2222,7 @@ h3, h4, h5, h6,
   z-index: 0; }
 
 .has-shadow {
-  box-shadow: 0 24px 64px rgba(21, 23, 25, 0.64); }
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.64); }
 
 img.has-shadow {
   border-radius: 2px; }
@@ -2950,4 +3071,10 @@ img.has-shadow {
     width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
 .navLogo {
-  width: 20%; }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%; }
+  @media only screen and (max-width: 37.5em) {
+    .navLogo {
+      margin-top: 35%; } }
