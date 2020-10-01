@@ -2000,6 +2000,7 @@ h3, h4, h5, h6,
     .signInGlowButton {
       position: relative;
       margin: auto;
+      margin-right: -96%;
       padding-right: 1.5rem;
       padding-left: 1.5rem;
       font-size: 1rem;

@@ -18,7 +18,7 @@ const Navigation = () => (
 const NavigationAuth = () => (
 	<ul className="noBullets">
 		<li>
-			<Link to={ROUTES.LANDING}  className="landingGlowButton">Landing</Link>
+			<Link to={ROUTES.LANDING}  className="landingGlowButton">Welcome</Link>
 		</li>
 		<li>
 			<Link to={ROUTES.HOME}>Home</Link>
@@ -38,7 +38,7 @@ const NavigationAuth = () => (
 const NavigationNonAuth = () => (
 	<ul className="noBullets">
 		<li>
-			<Link to={ROUTES.LANDING}  className="landingGlowButton">Landing</Link>
+			<Link to={ROUTES.LANDING}  className="landingGlowButton">Welcome</Link>
 		</li>
 		<li>
 			<Link to={ROUTES.SIGN_IN} className='signInGlowButton'>Sign In</Link>
