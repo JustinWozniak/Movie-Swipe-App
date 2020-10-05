@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import { useAsync } from 'react-async';
+import SingleMovie from '../SingleMovie';
 
 const mostPopularMovies =
 	'https://api.themoviedb.org/3/discover/movie?api_key=' +
@@ -9,8 +11,10 @@ const mostPopularMovies =
 // Then we'll fetch user data from this API
 const mostPopularTask = async () =>
 	await fetch(mostPopularMovies).then((res) => (res.ok ? res : Promise.reject(res))).then((res) => res.json());
-
+	
 function NewMovies(props) {
+	let [ clicked, setClicked ] = useState(false);
+
 	const posterPath = 'https://image.tmdb.org/t/p/w500/';
 	const { data, error, isLoading } = useAsync({ promiseFn: mostPopularTask });
 	if (isLoading) return 'Loading...';
@@ -22,16 +26,31 @@ function NewMovies(props) {
 		for (let i = 0; i < trendingMoviesCount; i++) {
 			movieImageUrls.push(data.results[i].poster_path);
 			movieNumbers.push(data.results[i].id);
+			
 		}
+
 
 		// The rendered component
 		return (
 			<div>
-            <h1>New Movies</h1>
+				<h1>New Movies</h1>
+				<h6>Click movie cover to toggle movie info</h6>
 				{movieImageUrls.map((images, index) => {
 					return (
-						<div>
-							<img className="movieCovers" src={posterPath + images} alt="movie" />
+						<div key={index}>
+							<img
+								className="movieCovers"
+								src={posterPath + images}
+								alt="movie"
+								onClick={() => setClicked(!clicked)}
+							/>
+							{clicked === true ? (
+								<SingleMovie value={movieNumbers[index]} /> 
+							) : clicked === false ? (
+								''
+							) : (
+								''
+							)}
 						</div>
 					);
 				})}

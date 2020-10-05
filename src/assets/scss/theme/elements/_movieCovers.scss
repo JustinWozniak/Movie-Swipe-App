@@ -3,12 +3,18 @@
     width: 15%;
     margin-left: 4%;
     margin-bottom: 5%;
+
     @include respond(phone) {
-        width: 90%;
-        margin: 5%;
+        width: 87%;
+        margin: 7%;
     }
+
     @include respond(tab-port) {
-        width: 39%;
-        margin: 5%;
+        width: 87%;
+        margin: 7%;
     }
+}
+
+.movieInfo {
+    float: left;
 }

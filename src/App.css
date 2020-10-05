@@ -3127,9 +3127,12 @@ img.has-shadow {
   margin-bottom: 5%; }
   @media only screen and (max-width: 37.5em) {
     .movieCovers {
-      width: 90%;
-      margin: 5%; } }
+      width: 87%;
+      margin: 7%; } }
   @media only screen and (max-width: 56.25em) {
     .movieCovers {
-      width: 39%;
-      margin: 5%; } }
+      width: 87%;
+      margin: 7%; } }
+
+.movieInfo {
+  float: left; }
