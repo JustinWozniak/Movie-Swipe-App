@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import RandomLogo from '../RandomLogo'
 
 import Navigation from '../Navigation';
 import LandingPage from '../Landing';
@@ -19,11 +20,8 @@ const App = () => (
   <Router>
     <div>
       <Navigation />
-      <video className="navLogo" id="background-video" loop autoPlay>
-			<source src="./images/MovieSwipe.mp4" type="video/mp4" />
-			<source src="./images/MovieSwipe.mp4" type="video/mp4" />
-			Your browser does not support the video tag.
-		</video>
+      <RandomLogo />
+    
       <hr />
 
       <Route exact path={ROUTES.LANDING} component={LandingPage} />
