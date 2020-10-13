@@ -12,6 +12,7 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import Footer from '../Footer';
 import NewMovies from '../MovieComponents/NewMovies'
+import Swipe from '../SwipeComponent'
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
@@ -36,6 +37,7 @@ const App = () => (
       <Route exact path={ROUTES.HOME} component={HomePage} />
       <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
       <Route exact path={ROUTES.ADMIN} component={AdminPage} />
+      <Route exact path={ROUTES.SWIPE} component={Swipe} />
       <Footer />
     </div>
   </Router>

@@ -27,6 +27,9 @@ const NavigationAuth = () => (
 			<Link to={ROUTES.ACCOUNT}>Account</Link>
 		</li>
 		<li>
+			<Link to={ROUTES.SWIPE}>Start Swiping!</Link>
+		</li>
+		<li>
 			<Link to={ROUTES.NEW_MOVIES}  className="newMoviesGlowButton">New Movies</Link>
 		</li>
 		{/* <li>
