@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAsync } from 'react-async';
 import TinderCard from 'react-tinder-card';
+import { withFirebase } from '../Firebase';
 
 const mostPopularMovies =
 	'https://api.themoviedb.org/3/discover/movie?api_key=' +
@@ -11,7 +12,6 @@ const mostPopularMovies =
 const mostPopularTask = async () =>
 	await fetch(mostPopularMovies).then((res) => (res.ok ? res : Promise.reject(res))).then((res) => res.json());
 
-
 function Swipe() {
 	const posterPath = 'https://image.tmdb.org/t/p/w500/';
 	const [ lastDirection, setLastDirection ] = useState();
@@ -20,20 +20,18 @@ function Swipe() {
 	if (isLoading) return 'Loading...';
 	if (error) return `Something went wrong: ${error.message} Movies In Theaters`;
 	if (data) {
-      
 		let movieImageUrls = [];
-        let movieNumbers = [];
-        let movieTitle=[]
+		let movieNumbers = [];
+		let movieTitle = [];
 		let trendingMoviesCount = data.results.length;
 		for (let i = 0; i < trendingMoviesCount; i++) {
 			movieImageUrls.push(data.results[i].poster_path);
-            movieNumbers.push(data.results[i].id);
-            movieTitle.push(data.results[i].title);
-          
+			movieNumbers.push(data.results[i].id);
+			movieTitle.push(data.results[i].title);
 		}
 
-		const swiped = (direction, nameToDelete) => {
-			console.log('removing: ' + nameToDelete);
+		const swiped = (direction, movieId) => {
+			console.log(movieId + ' Clicked');
 			setLastDirection(direction);
 		};
 
@@ -49,17 +47,11 @@ function Swipe() {
 						<TinderCard
 							className="swipe"
 							key={movieNumbers[index]}
-							onSwipe={(dir) => swiped(dir, index)}
+							onSwipe={(dir) => swiped(dir, movieNumbers[index])}
 							onCardLeftScreen={() => outOfFrame(index)}
 						>
-							<img
-								className="movieCovers"
-								src={posterPath + images}
-								alt="movie"
-							
-							/>
-								<h3>{movieTitle[index]}</h3>
-						
+							<img className="movieCovers" src={posterPath + images} alt="movie" />
+							<h3>{movieTitle[index]}</h3>
 						</TinderCard>
 					))}
 				</div>
